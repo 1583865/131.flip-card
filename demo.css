@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: space-evenly;
+	/*两端对齐-内容：空格-均匀；*/
+	align-items: center;
+	/*对齐项目*/
+	background-color: lightblue;
+}
+.wrap {
+	margin: 50px 100px;
+	position: relative;
+	width: 300px;
+	height: 400px;
+	perspective: 1000px;
+	/*透视*/
+}
+.tu1,.tu2{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	/*背面可见性：隐藏；*/
+	transition: transform .5s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: .4rem;
+	box-shadow: 0 .2rem .5rem rgba(0,0,0,.18)
+}
+.tu1 {
+	transform: rotateY(0deg);
+	font-size: 30px;
+	color: #fff;
+}
+.wrap:hover .tu1 {
+	transform: rotateY(180deg);
+}
+.tu2 {
+	transform: rotateY(-180deg);
+}
+.wrap:hover .tu2 {
+	transform: rotateY(0deg);
+}
+.wrap img {
+	width: 300px;
+	height: 400px;
+	border: 5px solid #999;
+	float: left;
+	margin-right: 15px;
+}
+
